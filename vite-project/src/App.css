@@ -40,3 +40,43 @@
 .read-the-docs {
   color: #888;
 }
+.formContainer{
+  width: 750px;
+  height: 60vh;
+  padding: 15px;
+  background-color: rgba(155, 219, 228, 0.61);
+  border: solid 1px rgba(0, 0, 0, 0.199);
+  color: black;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+form{
+  font-family: 'Kanit', sans-serif;
+}
+input{
+  background-color: rgba(247, 247, 247, 0.986);
+  color: black;
+  width: 90%;
+  height: 2vh;
+  border-radius: 15px;
+}
+p{
+  color: black;
+  font-family: 'Kanit', sans-serif;
+}
+.books{
+  display: flex;
+  flex-direction: row;
+}
+.book{
+  width: fit-content;
+  min-height: 30vh;
+  background-color: rgb(171, 231, 250);
+  border: solid 1px whitesmoke;
+}
+.book:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
