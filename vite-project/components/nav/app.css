@@ -1,0 +1,15 @@
+.NavigationBar{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 26px;
+    background-color: aliceblue;
+}
+
+
+.NavUl{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style-type: none;
+  }

@@ -1,9 +1,5 @@
-#root {
-  
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  justify-content: center;
+#root{
+  width: 100%;
 }
 .page{
   text-align: center;
@@ -59,3 +55,11 @@ p{
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
+
+.landingPage{
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://w0.peakpx.com/wallpaper/972/48/HD-wallpaper-stack-of-books-blue-background-education-concepts-books-library-school-learning-concepts.jpg");
+  background-size:cover;
+}
+

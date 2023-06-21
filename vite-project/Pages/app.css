@@ -1,0 +1,8 @@
+.homeContainer{
+    width: 80%;
+    height: 90vh;
+    border: solid 1px black;
+    border-radius: 50px;
+    background-color: rgba(34, 34, 34, 0.548);
+    margin: auto;
+}
