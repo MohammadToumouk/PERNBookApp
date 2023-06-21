@@ -19,6 +19,7 @@
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",
     "pool": "^0.4.1",
-    "postgres": "^3.3.5"
+    "postgres": "^3.3.5",
+    "react-router-dom": "^6.13.0"
   }
 }
