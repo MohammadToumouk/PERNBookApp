@@ -3,14 +3,21 @@ const pool = require('../../db');
 
 const booksRouter = express.Router();
 
+/* Get all Books */
+
 booksRouter.get('/', async(req,res) => {
     try {
-        const AllBooks = await pool.query('SELECT * FROM books;');
+        const limit = req.query.limit;
+        const skip = req.query.skip;
+
+        const AllBooks = await pool.query('SELECT * FROM books LIMIT $1 OFFSET $2',[limit,skip]);
         res.send(AllBooks.rows);
     } catch (error) {
         console.log(error);
     }
 })
+
+/* Create a Book */
 
 booksRouter.post('/', async(req,res) => {
     try {
@@ -23,6 +30,18 @@ booksRouter.post('/', async(req,res) => {
         console.log(error);
     }
 });
+
+/* Delete a Book */
+
+booksRouter.delete('/:id', async(req,res) => {
+    try {
+        const {id} = req.params;
+        const deletedBook = await pool.query('DELETE from books WHERE book_id = $1', [id]);
+        res.json(deletedBook)
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 

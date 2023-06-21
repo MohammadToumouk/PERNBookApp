@@ -25,20 +25,32 @@ function App() {
     }).catch(err => console.log(err))
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const deleteBook = (bookId) => {
+
+    
+    axios.delete(`http://localhost:5070/api/books/${bookId}`)
+    .then((response) => {
+      console.log(response.data)
+    }).catch(err => console.log(err))
+  }
+
+
 
   const fetchData = () => {
+
+    
     fetch('http://localhost:5070/api/books') 
     .then(response => response.json())
     .then(data => setBooks(data))
     .catch(error => console.log("error habibi", error));
   }
-  
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
-    <>
+    <div className='Page'>
     
      <form className='formContainer'>
       <h1>Create a new Book</h1>
@@ -90,14 +102,17 @@ function App() {
       <div className='books'>
   {books.map(book => (
     <div className='book' key={book.book_id}>
-      <p>{book.book_title}</p>
-      <p>{book.book_author}</p>
-      <p>{book.book_description}</p>
+      <p>Title:{book.book_title}</p>
+      <p>Author:{book.book_author}</p>
+      <p>Category:{book.book_category}</p>
+      <p>img will be inserted here later</p>
+      <br/><br/><br/>
+      <button onClick={() => deleteBook(book.book_id)}>Delete</button>
     </div>
     
   ))}
   </div>
-    </>
+    </div>
   )
 }
 
