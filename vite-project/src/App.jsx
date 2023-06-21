@@ -105,7 +105,7 @@ function App() {
       <p>Title:{book.book_title}</p>
       <p>Author:{book.book_author}</p>
       <p>Category:{book.book_category}</p>
-      <p>img will be inserted here later</p>
+      <img width={"250px"} src={book.book_cover_url} />
       <br/><br/><br/>
       <button onClick={() => deleteBook(book.book_id)}>Delete</button>
     </div>
