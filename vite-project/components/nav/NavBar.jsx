@@ -11,7 +11,7 @@ function Navbar()  {
             <ul className="NavUl">
                 <li><Link to = "/">Home</Link></li>
                 <li><Link to = "/Books">Books</Link></li>
-                
+                <li><Link to = "/BooksCategoryPage">Search by Filter</Link></li>
 
             </ul>
         </nav>

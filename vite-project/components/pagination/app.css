@@ -1,0 +1,29 @@
+.paginationNumber{
+    color: black;
+}
+.paginationBar{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.page-item{
+    background-color: rgb(255, 145, 0);
+    color: black;
+}
+.pagination{
+    color: black;
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+}
+.page-Link{
+    color: black;
+    background-color: bisque;
+}
+.currentPageHolder{
+    border: solid 1px black;
+    width: 50px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 3;
+    color: red;
+}

@@ -1,4 +1,5 @@
 import React from "react"
+import BooksComponent from "./Books/BooksComponent";
 
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -7,7 +8,7 @@ import axios from 'axios'
 
 function myForm() {
 
-    const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);
   const [book_id, setBook_Id] = useState();
   const [book_title, setBook_Title] = useState();
   const [book_author, setBook_Author] = useState();
@@ -27,29 +28,10 @@ function myForm() {
     }).catch(err => console.log(err))
   }
 
-  const deleteBook = (bookId) => {
+ 
 
-    
-    axios.delete(`http://localhost:5070/api/books/${bookId}`)
-    .then((response) => {
-      console.log(response.data)
-    }).catch(err => console.log(err))
-  }
+  
 
-
-
-  const fetchData = () => {
-
-    
-    fetch('http://localhost:5070/api/books') 
-    .then(response => response.json())
-    .then(data => setBooks(data))
-    .catch(error => console.log("error habibi", error));
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
     return(
         <div className='Page'>
@@ -101,19 +83,7 @@ function myForm() {
       </form>
       <br/>
      
-      <div className='books'>
-  {books.map(book => (
-    <div className='book' key={book.book_id}>
-      <p>Title:{book.book_title}</p>
-      <p>Author:{book.book_author}</p>
-      <p>Category:{book.book_category}</p>
-      <img width={"250px"} src={book.book_cover_url} />
-      <br/><br/><br/>
-      <button onClick={() => deleteBook(book.book_id)}>Delete</button>
-    </div>
-    
-  ))}
-  </div>
+     
     </div>
     )
 };
