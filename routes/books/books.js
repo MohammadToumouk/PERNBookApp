@@ -17,6 +17,20 @@ booksRouter.get('/', async(req,res) => {
     }
 })
 
+/* Get Filterd Books by Category */
+
+booksRouter.get('/:category', async (req, res) => {
+    try {
+      const cat = req.params.category;
+      const filteredBooks = await pool.query('SELECT * FROM books WHERE book_Category = $1', [cat]);
+      console.log("Hi");
+      res.json(filteredBooks.rows);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+  
+
 /* Create a Book */
 
 booksRouter.post('/', async(req,res) => {
