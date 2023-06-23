@@ -21,10 +21,12 @@ function myForm() {
 
 
 
-  const Submit = () => {
+  const Submit = (e) => {
+    e.preventDefault() 
     axios.post('http://localhost:5070/api/books', {book_id, book_title, book_author, book_description, book_category, book_cover_url,book_publshedAt, book_isActive})
     .then((books) => {
       console.log(books)
+
     }).catch(err => console.log(err))
   }
 
@@ -39,35 +41,35 @@ function myForm() {
      <form className='formContainer'>
       <h1>Create a new Book</h1>
       <div style={{display:"flex", flexDirection:"row"}}>
-      <label for="book_id">Book ID:
+      <label htmlFor="book_id">Book ID:
       <input id="book_id" label="ID"  onChange={(e) => setBook_Id(e.target.value)}/>
       </label>
-      <label for="book_title">Book TITLE:
+      <label htmlFor="book_title">Book TITLE:
       <input id="book_title" label="Title" onChange={(e) => setBook_Title(e.target.value)} />
       </label>
-      <label for="book_author">Book Author:
+      <label htmlFor="book_author">Book Author:
       <input id="book_author" label="Author" onChange={(e) => setBook_Author(e.target.value)}/>
       </label>
       </div>
       <br/>
       <div>
-      <label for="book_author">Description:
+      <label htmlFor="book_author">Description:
       <input style={{height:"10vh"}} id="book_description" label="Description" onChange={(e) => setBook_Description(e.target.value)} />
       </label>
       
       </div>
       <br/>
       <div style={{display:"flex", flexDirection:"row"}}>
-      <label for="book_author">Category:
+      <label htmlFor="book_author">Category:
       <input id="book_category" label="Category" onChange={(e) => setBook_Category(e.target.value)} />
       </label>
-      <label for="book_author">book_cover_url:
+      <label htmlFor="book_author">book_cover_url:
       <input id="book_cover_url" label="Image-URL" onChange={(e) => setBook_Cover_Url(e.target.value)} />
       </label>
-      <label for="book_author">Ort:
+      <label htmlFor="book_author">Ort:
       <input id="book_publshedAt" label="Publishing place" onChange={(e) => setBook_PublshedAt(e.target.value)}/>
       </label>
-      <label for="book_author">Active?:
+      <label htmlFor="book_author">Active?:
       <input id="book_isActive" label="Published?" onChange={(e) => setBook_IsActive(e.target.value)} />
       </label>
       </div>
@@ -79,7 +81,7 @@ function myForm() {
 
       </div>
       <br/>
-      <button onClick={Submit}>Post</button>
+      <button onClick={(e) =>  Submit(e) }>Post</button>
       </form>
       <br/>
      

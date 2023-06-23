@@ -27,7 +27,7 @@ const books = () => {
     };
       fetchData();
 
-    }, []);
+    }, [books]);
 
 
     
@@ -50,7 +50,7 @@ const books = () => {
     totalBooks={books.length}
     paginate={paginate}
     currentPage={currentPage}/>
-   <BooksCategory books = {books} />
+   {/* <BooksCategory books = {books} /> */}
 
       
     
