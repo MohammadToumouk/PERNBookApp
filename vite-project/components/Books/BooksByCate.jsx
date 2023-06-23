@@ -30,7 +30,7 @@ const BooksCategory = ({books}) => {
     <>
     <label htmlFor="category">Filter by Category:</label>
           <select id="category" value={selectedCategory} onChange={(e) => handleCategoryChange(e)}>
-            
+            <option value="none" selected >-</option>
             <option value="History">History</option>
             <option value="Fiction">Fiction</option>
             <option value="Action">Action</option>
@@ -39,6 +39,7 @@ const BooksCategory = ({books}) => {
           
           
     <div className='books'>
+      
     {filterdBooks.map(filterdBook => (
       <div className='book' key={filterdBook.book_id}>
         <p>Title:{filterdBook.book_title}</p>
