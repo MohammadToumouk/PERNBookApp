@@ -27,7 +27,7 @@ const books = () => {
     };
       fetchData();
 
-    }, []);
+    }, [books]);
 
 
     
